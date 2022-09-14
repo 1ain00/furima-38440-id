@@ -10,6 +10,8 @@ class User < ApplicationRecord
          validates :family_name_kana, presence: true
          validates :first_name_kana, presence: true
          validates :birthday, presence: true
+         validates :email,presence: true
+         validates :encrypted_password,presence: true
    
   has_many :items
   has_many :buys
