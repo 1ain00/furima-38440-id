@@ -13,5 +13,6 @@ window.addEventListener('load', () => {
     console.log(value_result)
     profitNumber.innerHTML = (Math.floor(inputValue - value_result));
       console.log(profitNumber);
+
   })
 });
