@@ -18,15 +18,13 @@ class Item < ApplicationRecord
     validates :days_to_ship_id
   end
 
-  validates :name
-  validates :text
+  validates :name, length: { maximum: 40 }
+  validates :text,length: { maximum: 1000 }
   validates_numericality_of :price, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_9999_999
   validates :price, format: { with: /\A[0-9]+\z/}
-  validates :images
+  validates :image
  end
 
- #validates_length_of :iame, maximum: 40
- #validates_length_of :text, maximum: 1000
 
   #has_one :buy
   belongs_to :user
