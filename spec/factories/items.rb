@@ -4,6 +4,7 @@ FactoryBot.define do
     price { Faker::Number.between(from: 300, to: 99_999_999) }
     category_id { 2 }
     status_id { 2 }
+    user_id { 100 }
     delivery_fee_id { 2 }
     prefecture_id { 2 }
     days_to_ship_id { 2 }
