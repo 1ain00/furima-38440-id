@@ -41,34 +41,32 @@ RSpec.describe User, type: :model do
       it 'パスワードが6文字以下だと登録できない' do
         @user.password = '00000'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
 
       it 'パスワードが半角英字のみでは登録できない' do
         @user.password = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
 
       it 'パスワードに半角数字のみでは登録できない' do
         @user.password = '111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
 
       it 'パスワードに全角文字を含むと登録できない' do
         @user.password = 'あいうえお'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid")
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
-
 
       it 'パスワードとパスワード(確認)が一致していないと登録できない' do
         @user.password_confirmation = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
-      
     end
 
     context 'ユーザー情報が登録できる場合' do

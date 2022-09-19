@@ -24,11 +24,12 @@
 | name            | string     | null: false                    |
 | price           | integer    | null: false                    |
 | status_id       | integer    | null: false                    |
-| condition_id    | integer    | null: false                    |
 | category_id     | integer    | null: false                    |
 | prefecture_id   | integer    | null: false                    |
 | days_to_ship_id | integer    | null: false                    |
+| delivery_fee_id | integer    | null: false                    |
 | text            | text       | null: false                    |
+
 
 ### Association 
 - belongs_to :user
