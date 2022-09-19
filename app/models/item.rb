@@ -7,27 +7,23 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :days_to_ship
 
-
-
   with_options presence: true do
-   with_options numericality: { other_than: 1 , message: "can't be blank" } do
-    validates :category_id
-    validates :status_id
-    validates :delivery_fee_id
-    validates :prefecture_id
-    validates :days_to_ship_id
+    with_options numericality: { other_than: 1, message: "can't be blank" } do
+      validates :category_id
+      validates :status_id
+      validates :delivery_fee_id
+      validates :prefecture_id
+      validates :days_to_ship_id
+    end
+
+    validates :name, length: { maximum: 40 }
+    validates :text, length: { maximum: 1000 }
+    validates_numericality_of :price, greater_than_or_equal_to: 300, less_than_or_equal_to: 99_999_999
+    validates :price, format: { with: /\A[0-9]+\z/ }
+    validates :image
   end
 
-  validates :name, length: { maximum: 40 }
-  validates :text,length: { maximum: 1000 }
-  validates_numericality_of :price, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_9999_999
-  validates :price, format: { with: /\A[0-9]+\z/}
-  validates :image
- end
-
-
-  #has_one :buy
+  # has_one :buy
   belongs_to :user
   has_one_attached :image
-
 end
