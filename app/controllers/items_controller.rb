@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @items = Item.order('created_at DESC')
@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+<<<<<<< HEAD
   def edit
     @item = Item.find(params[:id])
     redirect_to root_path unless current_user.id == @item.user_id
@@ -36,6 +37,8 @@ class ItemsController < ApplicationController
     end
   end
 
+=======
+>>>>>>> parent of 9b017ba (商品編集機能実装)
   private
 
   def item_params
