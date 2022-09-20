@@ -22,23 +22,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-<<<<<<< HEAD
-  def edit
-    @item = Item.find(params[:id])
-    redirect_to root_path unless current_user.id == @item.user_id
-  end
 
-  def update
-    @item = Item.find(params[:id])
-    if @item.update(item_params)
-      redirect_to item_path
-    else
-      render :edit
-    end
-  end
 
-=======
->>>>>>> parent of 9b017ba (商品編集機能実装)
   private
 
   def item_params
