@@ -40,7 +40,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| post_card     | string     | null: false                    |
+| post_code     | string     | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
 | telephone     | string     | null: false                    |

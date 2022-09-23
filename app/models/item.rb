@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     validates :image
   end
 
-  # has_one :buy
+  has_one :buy
   belongs_to :user
   has_one_attached :image
 end
